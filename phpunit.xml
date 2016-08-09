@@ -37,6 +37,7 @@
             <exclude>
                 <directory suffix=".php">src/Tests</directory>
                 <directory suffix=".php">src/Kernel/Tests</directory>
+                <directory suffix=".php">src/Config/Tests</directory>
             </exclude>
         </whitelist>
     </filter>

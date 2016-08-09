@@ -58,7 +58,7 @@ class Application extends Container\Container implements ApplicationInterface
             $fileContents = file_get_contents($configFile);
 
             if (($appConfig = json_decode($fileContents, true)) !== null) {
-                $config->setConfig($appConfig);
+                $config->set($appConfig);
             }
         }
 
