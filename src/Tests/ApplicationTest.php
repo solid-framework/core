@@ -90,7 +90,7 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
      */
     public function testRun()
     {
-        $application = new Application(__DIR__, 'Tests');
+        $application = new Application(__DIR__ . '/Fixtures', 'Tests');
         $application->run();
 
         $this->assertTrue(true, 'Application should run without exceptions');
@@ -103,7 +103,7 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
      */
     public function testConfig()
     {
-        $application = new Application(__DIR__, 'Tests');
+        $application = new Application(__DIR__ . '/Fixtures', 'Tests');
 
         $this->assertEquals(
             'value',
@@ -119,7 +119,7 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
      */
     public function testStartup()
     {
-        $application = new Application(__DIR__, 'Tests');
+        $application = new Application(__DIR__ . '/Fixtures', 'Tests');
 
         $this->assertEquals('run', $application->resolve('testStartup'), 'The application Startup should be called');
     }

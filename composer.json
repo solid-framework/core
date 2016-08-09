@@ -36,7 +36,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Solid\\App\\": "src/Tests"
+            "Solid\\Tests\\": "src/Tests/Fixtures",
+            "Solid\\App\\": "src/Tests/Fixtures"
         }
     },
     "require": {
