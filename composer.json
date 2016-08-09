@@ -1,0 +1,52 @@
+{
+    "name": "solid-framework/core",
+    "description": "A solid framework for PHP.",
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "framework",
+        "solid",
+        "php",
+        "modular",
+        "core"
+    ],
+    "authors": [
+        {
+            "name": "Martin Pettersson",
+            "email": "martin@solid-framework.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "http://solid-framework.com",
+    "support": {
+        "email": "support@solid-framework.com",
+        "issues": "https://github.com/solid-framework/core/issues",
+        "source": "https://github.com/solid-framework/core",
+        "docs": "http://docs.solid-framework.com"
+    },
+    "suggest": {
+        "solid-framework/http": "Allows handling of HTTP requests.",
+        "solid-framework/cli": "Allows handling of CLI requests."
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Solid\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Solid\\App\\": "src/Tests"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.5.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

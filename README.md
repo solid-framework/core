@@ -1,2 +1,2 @@
-# php-core
-A solid framework for PHP.
+# Solid Framework - Core
+coming soon...
