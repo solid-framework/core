@@ -11,14 +11,14 @@ namespace Solid\Config\Tests;
 
 use Solid\Config\Config;
 use Solid\Config\ConfigSection;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @package Solid\Config\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
-class ConfigSectionTest extends PHPUnit_Framework_TestCase
+class ConfigSectionTest extends TestCase
 {
     /**
      * @internal
@@ -36,8 +36,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @before
+     * @since 0.1.0
+     * @return void
      */
     public function setup()
     {
@@ -47,8 +48,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testInstanceof()
     {
@@ -57,8 +59,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testPrefix()
     {
@@ -67,8 +70,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testSet()
     {
@@ -94,8 +98,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testHas()
     {
@@ -107,8 +112,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testGet()
     {
@@ -125,8 +131,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testPut()
     {
@@ -164,8 +171,9 @@ class ConfigSectionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testMerge()
     {

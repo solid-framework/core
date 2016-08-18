@@ -10,19 +10,20 @@
 namespace Solid\Config\Tests;
 
 use Solid\Config\Config;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @package Solid\Config\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
-class ConfigTest extends PHPUnit_Framework_TestCase
+class ConfigTest extends TestCase
 {
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testConstructor()
     {
@@ -35,8 +36,9 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testSet()
     {
@@ -48,8 +50,9 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testHas()
     {
@@ -62,8 +65,9 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testGet()
     {
@@ -86,8 +90,9 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testPut()
     {
@@ -105,8 +110,9 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testMerge()
     {

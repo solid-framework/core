@@ -11,19 +11,20 @@ namespace Solid\Kernel\Tests;
 
 use ReflectionClass;
 use Solid\Kernel\Request;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @package Solid\Kernel\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
-class RequestTest extends PHPUnit_Framework_TestCase
+class RequestTest extends TestCase
 {
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testConstructor()
     {
@@ -84,8 +85,9 @@ class RequestTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testGetAllHeaders()
     {
@@ -100,8 +102,9 @@ class RequestTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testGetAllHeadersPolyfill()
     {

@@ -11,14 +11,14 @@ namespace Solid\Container\Tests;
 
 use Exception;
 use Solid\Container\Container;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @package Solid\Container\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
-class ContainerTest extends PHPUnit_Framework_TestCase
+class ContainerTest extends TestCase
 {
     /**
      * @internal
@@ -36,8 +36,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @before
+     * @since 0.1.0
+     * @return void
      */
     public function setup()
     {
@@ -47,8 +48,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testImplementationRequirements()
     {
@@ -61,8 +63,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testBindFactory()
     {
@@ -86,8 +89,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testBindSharedFactory()
     {
@@ -111,8 +115,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testBindSharedClass()
     {
@@ -126,8 +131,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testFactoryParameters()
     {
@@ -147,8 +153,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testInstance()
     {
@@ -163,8 +170,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testResolve()
     {
@@ -177,8 +185,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      * @expectedException \Solid\Container\DependencyResolutionException
      * @expectedExceptionMessageRegExp /is circular$/
      */
@@ -189,8 +198,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      * @expectedException \Solid\Container\NonInstantiableClassException
      */
     public function testNonInstantiableClass()
@@ -200,8 +210,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testRecursiveDependencyResolution()
     {
@@ -226,8 +237,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testParentConstructorDependencyResolution()
     {
@@ -248,8 +260,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testParameterDependencyResolution()
     {
@@ -293,8 +306,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testAlias()
     {
@@ -320,8 +334,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testBound()
     {
@@ -342,8 +357,9 @@ class ContainerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testShared()
     {

@@ -9,7 +9,7 @@
 
 namespace Solid\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Solid\Application;
 
 /**
@@ -17,12 +17,13 @@ use Solid\Application;
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
-class ApplicationTest extends PHPUnit_Framework_TestCase
+class ApplicationTest extends TestCase
 {
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testImplementationRequirements()
     {
@@ -45,8 +46,9 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testConstructor()
     {
@@ -73,8 +75,9 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      * @expectedException \Solid\UnsupportedEnvironmentException
      */
     public function testEnvironmentFail()
@@ -85,8 +88,9 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testRun()
     {
@@ -98,8 +102,9 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testConfig()
     {
@@ -114,8 +119,9 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
 
     /**
      * @api
-     * @since 0.1.0
      * @test
+     * @since 0.1.0
+     * @return void
      */
     public function testStartup()
     {
