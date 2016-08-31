@@ -17,6 +17,7 @@ use PHPUnit\Framework\TestCase;
  * @package Solid\Container\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
+ * @coversDefaultClass Solid\Container\Container
  */
 class ContainerTest extends TestCase
 {
@@ -49,6 +50,7 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @coversNothing
      * @since 0.1.0
      * @return void
      */
@@ -64,6 +66,8 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::bind
+     * @covers ::construct
      * @since 0.1.0
      * @return void
      */
@@ -90,6 +94,7 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::bind
      * @since 0.1.0
      * @return void
      */
@@ -116,6 +121,8 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::bind
+     * @covers ::resolve
      * @since 0.1.0
      * @return void
      */
@@ -132,6 +139,7 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @coversNothing
      * @since 0.1.0
      * @return void
      */
@@ -154,6 +162,8 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::instance
+     * @covers ::resolve
      * @since 0.1.0
      * @return void
      */
@@ -171,6 +181,10 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::resolve
+     * @covers ::getConcrete
+     * @covers ::construct
+     * @covers ::resolveConstructorDependencies
      * @since 0.1.0
      * @return void
      */
@@ -186,10 +200,13 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
-     * @since 0.1.0
-     * @return void
+     * @covers ::resolve
+     * @covers ::construct
+     * @covers ::resolveConstructorDependencies
      * @expectedException \Solid\Container\DependencyResolutionException
      * @expectedExceptionMessageRegExp /is circular$/
+     * @since 0.1.0
+     * @return void
      */
     public function testCircularDependencies()
     {
@@ -199,9 +216,12 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::resolve
+     * @covers ::construct
+     * @covers ::resolveConstructorDependencies
+     * @expectedException \Solid\Container\NonInstantiableClassException
      * @since 0.1.0
      * @return void
-     * @expectedException \Solid\Container\NonInstantiableClassException
      */
     public function testNonInstantiableClass()
     {
@@ -211,6 +231,24 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::resolve
+     * @covers ::construct
+     * @covers ::resolveConstructorDependencies
+     * @expectedException \Solid\Container\ResolveException
+     * @since 0.1.0
+     * @return void
+     */
+    public function testNonExistingClass()
+    {
+        $this->container->resolve('NonExistingClass');
+    }
+
+    /**
+     * @api
+     * @test
+     * @covers ::resolve
+     * @covers ::construct
+     * @covers ::resolveConstructorDependencies
      * @since 0.1.0
      * @return void
      */
@@ -238,6 +276,7 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @coversNothing
      * @since 0.1.0
      * @return void
      */
@@ -261,6 +300,9 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::resolve
+     * @covers ::construct
+     * @covers ::resolveConstructorDependencies
      * @since 0.1.0
      * @return void
      */
@@ -307,6 +349,8 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::alias
+     * @covers ::isAlias
      * @since 0.1.0
      * @return void
      */
@@ -335,6 +379,8 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::isBound
+     * @covers ::resolveAlias
      * @since 0.1.0
      * @return void
      */
@@ -358,6 +404,7 @@ class ContainerTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::isShared
      * @since 0.1.0
      * @return void
      */
