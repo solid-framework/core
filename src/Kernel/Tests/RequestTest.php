@@ -17,12 +17,24 @@ use PHPUnit\Framework\TestCase;
  * @package Solid\Kernel\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
+ * @coversDefaultClass Solid\Kernel\Request
  */
 class RequestTest extends TestCase
 {
     /**
      * @api
      * @test
+     * @covers ::__construct
+     * @covers ::getGlobalParameters
+     * @covers ::getServerParameters
+     * @covers ::getGetParameters
+     * @covers ::getPostParameters
+     * @covers ::getFileParameters
+     * @covers ::getCookieParameters
+     * @covers ::getSessionParameters
+     * @covers ::getRequestParameters
+     * @covers ::getEnvParameters
+     * @covers ::getHeaderParameters
      * @since 0.1.0
      * @return void
      */
@@ -86,6 +98,7 @@ class RequestTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::getAllHeaders
      * @since 0.1.0
      * @return void
      */
@@ -103,6 +116,7 @@ class RequestTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::getAllHeadersPolyfill
      * @since 0.1.0
      * @return void
      */
