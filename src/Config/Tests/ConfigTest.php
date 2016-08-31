@@ -16,12 +16,14 @@ use PHPUnit\Framework\TestCase;
  * @package Solid\Config\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
+ * @coversDefaultClass Solid\Config\Config
  */
 class ConfigTest extends TestCase
 {
     /**
      * @api
      * @test
+     * @covers ::__construct
      * @since 0.1.0
      * @return void
      */
@@ -37,6 +39,7 @@ class ConfigTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::set
      * @since 0.1.0
      * @return void
      */
@@ -51,6 +54,7 @@ class ConfigTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::has
      * @since 0.1.0
      * @return void
      */
@@ -66,6 +70,7 @@ class ConfigTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::get
      * @since 0.1.0
      * @return void
      */
@@ -91,6 +96,7 @@ class ConfigTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::put
      * @since 0.1.0
      * @return void
      */
@@ -111,6 +117,9 @@ class ConfigTest extends TestCase
     /**
      * @api
      * @test
+     * @covers ::merge
+     * @covers ::mergeSettings
+     * @covers ::isAssoc
      * @since 0.1.0
      * @return void
      */
