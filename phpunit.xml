@@ -9,6 +9,7 @@
         convertErrorsToExceptions="true"
         convertNoticesToExceptions="true"
         convertWarningsToExceptions="true"
+        strict="true"
         forceCoversAnnotation="false"
         mapTestClassNameToCoveredClassName="false"
         printerClass="PHPUnit_TextUI_ResultPrinter"
@@ -39,6 +40,8 @@
                 <directory suffix=".php">src/Kernel/Tests</directory>
                 <directory suffix=".php">src/Config/Tests</directory>
                 <directory suffix=".php">src/Container/Tests</directory>
+                <directory suffix=".php">src/Log/Tests</directory>
+                <directory suffix=".php">src/Log/Formatters/Tests</directory>
             </exclude>
         </whitelist>
     </filter>
