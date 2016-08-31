@@ -16,6 +16,7 @@ use Solid\Application;
  * @package Solid\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
+ * @coversDefaultClass Solid\Application
  */
 class ApplicationTest extends TestCase
 {
@@ -24,6 +25,7 @@ class ApplicationTest extends TestCase
      * @test
      * @since 0.1.0
      * @return void
+     * @coversNothing
      */
     public function testImplementationRequirements()
     {
@@ -49,6 +51,9 @@ class ApplicationTest extends TestCase
      * @test
      * @since 0.1.0
      * @return void
+     * @covers ::__construct
+     * @covers ::getDirectory
+     * @covers ::getSapiNamespace
      */
     public function testConstructor()
     {
@@ -79,6 +84,7 @@ class ApplicationTest extends TestCase
      * @since 0.1.0
      * @return void
      * @expectedException \Solid\UnsupportedEnvironmentException
+     * @covers ::run
      */
     public function testEnvironmentFail()
     {
@@ -91,6 +97,7 @@ class ApplicationTest extends TestCase
      * @test
      * @since 0.1.0
      * @return void
+     * @covers ::run
      */
     public function testRun()
     {
@@ -105,6 +112,7 @@ class ApplicationTest extends TestCase
      * @test
      * @since 0.1.0
      * @return void
+     * @covers ::__construct
      */
     public function testConfig()
     {
@@ -122,6 +130,7 @@ class ApplicationTest extends TestCase
      * @test
      * @since 0.1.0
      * @return void
+     * @covers ::__construct
      */
     public function testStartup()
     {
