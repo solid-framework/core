@@ -132,6 +132,32 @@ class ApplicationTest extends TestCase
      * @since 0.1.0
      * @return void
      */
+    public function testLogger()
+    {
+        $application = new Application(__DIR__ . '/Fixtures', 'Tests');
+        $logger = $application->resolve('logger');
+
+        $this->assertInstanceOf('Solid\Log\Logger', $logger);
+
+        $message = 'Log message';
+
+        ob_start();
+        $logger->info($message);
+        $output = ob_get_clean();
+
+        $this->assertNotFalse(
+            strpos($output, $message),
+            'Should load the output logger according to the configuration file'
+        );
+    }
+
+    /**
+     * @api
+     * @test
+     * @covers ::__construct
+     * @since 0.1.0
+     * @return void
+     */
     public function testStartup()
     {
         $application = new Application(__DIR__ . '/Fixtures', 'Tests');

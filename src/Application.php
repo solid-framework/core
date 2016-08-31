@@ -9,6 +9,7 @@
 
 namespace Solid;
 
+use Solid\Container\Container;
 use Solid\Container\ResolveException;
 use Solid\Kernel\Request as KernelRequest;
 
@@ -17,7 +18,7 @@ use Solid\Kernel\Request as KernelRequest;
  * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
-class Application extends Container\Container implements ApplicationInterface
+class Application extends Container implements ApplicationInterface
 {
     /**
      * @internal
@@ -64,6 +65,18 @@ class Application extends Container\Container implements ApplicationInterface
                 $config->set($appConfig);
             }
         }
+
+        // bind the logger
+        $this->bind('Solid\Log\Logger', function (Container $container) {
+            $logger = new \Solid\Log\Logger;
+
+            foreach ((array) $container->resolve('config')->get('log.loggers', []) as $loggerClass => $levels) {
+                $logger->addLogger($container->resolve($loggerClass), $levels);
+            }
+
+            return $logger;
+        }, true);
+        $this->alias('Solid\Log\Logger', 'logger');
 
         if (
             class_exists('Solid\App\Startup') &&

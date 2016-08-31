@@ -1,3 +1,8 @@
 {
-  "key": "value"
+    "key": "value",
+    "log": {
+        "loggers": {
+            "Solid\\Log\\Tests\\Fixtures\\OutputLogger": null
+        }
+    }
 }
