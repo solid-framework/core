@@ -46,12 +46,15 @@ class Application extends Container\Container implements ApplicationInterface
 
         // bind the application
         $this->instance('Solid\Application', $this);
-        $this->alias('Solid\Application', 'application');
-        $this->alias('Solid\Application', 'app');
+
+        // bind the container
+        $this->instance('Solid\Container\Container', $this);
 
         // bind the configuration object
-        $config = $this->resolve('Solid\Config\Config');
-        $this->instance('config', $config);
+        $this->bind('Solid\Config\Config', null, true);
+        $this->alias('Solid\Config\Config', 'config');
+
+        $config = $this->resolve('config');
 
         // load the application configuration
         if (is_readable($configFile = "{$this->directory}/config.json")) {
