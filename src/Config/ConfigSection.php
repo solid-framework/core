@@ -41,8 +41,6 @@ class ConfigSection extends Config
         $this->prefix = trim($prefix, '.');
         $this->config = $config;
 
-        parent::__construct();
-
         if (!$this->config->has($this->prefix)) {
             $this->config->put($this->prefix, []);
         }

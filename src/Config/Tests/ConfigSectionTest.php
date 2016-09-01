@@ -68,7 +68,13 @@ class ConfigSectionTest extends TestCase
      */
     public function testPrefix()
     {
-        $this->assertArrayHasKey('test', $this->config->get());
+        $this->assertArrayHasKey('test', $this->config->get(), 'Should create section if none exists');
+
+        $config = new Config(['test' => 'value']);
+        $configSection = new ConfigSection('test-2', $config);
+
+        $this->assertArrayHasKey('test-2', $config->get(), 'Should create section if none exists');
+        $this->assertArrayHasKey('test', $config->get(), 'Should not clear the existing fields');
     }
 
     /**
