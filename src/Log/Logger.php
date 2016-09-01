@@ -50,6 +50,7 @@ class Logger extends AbstractLogger
      * @param LoggerInterface $logger The logger to add.
      * @param array           $levels The levels to add the logger to.
      * @return void
+     * @throws InvalidArgumentException
      */
     public function addLogger(LoggerInterface $logger, array $levels = null)
     {
@@ -77,6 +78,7 @@ class Logger extends AbstractLogger
      * @param string $message The message to log.
      * @param array  $context The context to interpolate the message with.
      * @return void
+     * @throws InvalidArgumentException
      */
     public function log($level, $message, array $context = [])
     {

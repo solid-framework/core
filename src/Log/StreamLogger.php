@@ -83,6 +83,7 @@ class StreamLogger extends AbstractLogger
      * @param string $message The message to log.
      * @param array  $context The context to interpolate the message with.
      * @return void
+     * @throws InvalidArgumentException
      */
     public function log($level, $message, array $context = [])
     {
